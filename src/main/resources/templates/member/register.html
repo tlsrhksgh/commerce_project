@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        #register_form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            margin: 0px 30px;
+        }
+
+        #register_form input {
+            border: none;
+            padding: 15px 0px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        #register_form input:not([type="submit"]) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s ease-in-out;
+            outline: none;
+        }
+
+        #register_form input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        #register_form input:focus {
+            border-color: yellow;
+        }
+
+        #register_form input[type="submit"] {
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form id="register_form" method="post" onsubmit="checkPassword();">
+        <input type="text" placeholder="아이디 입력" name="userId" required />
+        <input type="text" placeholder="이름 입력" name="userName" required />
+        <input type="email" placeholder="이메일 입력" name="email" required />
+        <input type="text" placeholder="휴대폰 번호 입력" name="phone" required />
+        <input id="password" type="password" placeholder="패스워드 입력" name="password" required />
+        <input id="password2" type="password" placeholder="패스워드 확인" required />
+        <input type="submit" value="회원가입"/>
+    </form>
+
+    <script>
+        const checkPassword = () => {
+            const pw1 = document.getElementById("password").value;
+            const pw2 = document.getElementById("password2").value;
+
+            if(pw1 !== pw2) {
+                alert("패스워드가 일치하지 않습니다.")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
