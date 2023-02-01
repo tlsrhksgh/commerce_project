@@ -41,6 +41,8 @@
 </head>
 <body>
 
+    <header th:replace="/fragments/layout.html :: fragment-header-menu"></header>
+
     <form id="register_form" method="post" onsubmit="checkPassword();">
         <input type="text" placeholder="아이디 입력" name="userId" required />
         <input type="text" placeholder="이름 입력" name="userName" required />

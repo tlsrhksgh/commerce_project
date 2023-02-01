@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>fastlms</title>
+</head>
+<body>
+
+<header th:fragment="fragment-header-menu">
+  <div>
+    <a href="/member/register">회원 가입</a>
+    |
+    <a href="/member/info">회원 정보</a>
+    |
+    <a href="/member/login">로그인</a>
+    |
+    <a href="/member/logout">로그아웃</a>
+  </div>
+  <hr/>
+</header>
+
+<header th:fragment="fragment-admin-header-menu">
+  <div>
+    <a href="/admin/main">회원 가입</a>
+    |
+    <a href="/admin/member/info">회원 정보</a>
+    |
+    <a href="/admin/product/info">상품 정보</a>
+    |
+    <a href="/admin/category/list">카테고리 관리</a>
+    |
+    <a href="/member/logout">로그아웃</a>
+  </div>
+  <hr/>
+</header>
+
+</body>
+</html>
