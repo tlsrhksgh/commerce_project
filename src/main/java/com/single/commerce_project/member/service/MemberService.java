@@ -16,4 +16,5 @@ public interface MemberService extends UserDetailsService {
     boolean resetPassword(ResetPasswordDto resetMemberDto);
 
     String findUserId(FindUserIdDto findUserIdDto);
+
 }

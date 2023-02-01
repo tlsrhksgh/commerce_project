@@ -4,6 +4,7 @@ import com.single.commerce_project.member.dto.FindUserIdDto;
 import com.single.commerce_project.member.dto.MemberDto;
 import com.single.commerce_project.member.dto.ResetPasswordDto;
 import com.single.commerce_project.member.service.MemberService;
+import com.single.commerce_project.member.util.MemberAuth;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,14 +20,23 @@ import javax.servlet.http.HttpServletRequest;
 public class MemberController {
 
     private final MemberService memberService;
+    private final MemberAuth memberAuth;
 
     @RequestMapping("/member/login")
+
     public String login() {
+        if (memberAuth.isAuthenticated()) {
+            return "redirect:/";
+        }
+
         return "member/login";
     }
 
     @GetMapping("/member/register")
     public String register() {
+        if (memberAuth.isAuthenticated()) {
+            return "redirect:/";
+        }
 
         return "member/register";
     }
