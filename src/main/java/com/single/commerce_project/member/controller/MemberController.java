@@ -1,8 +1,7 @@
 package com.single.commerce_project.member.controller;
 
-import com.single.commerce_project.member.dto.FindUserIdDto;
 import com.single.commerce_project.member.dto.MemberDto;
-import com.single.commerce_project.member.dto.ResetPasswordDto;
+import com.single.commerce_project.member.dto.FindMemberInfo;
 import com.single.commerce_project.member.service.MemberService;
 import com.single.commerce_project.member.util.MemberAuth;
 import lombok.RequiredArgsConstructor;
@@ -69,9 +68,9 @@ public class MemberController {
     }
 
     @PostMapping("/member/find-password")
-    public String findPasswordSubmit(Model model, ResetPasswordDto resetPasswordDto) {
+    public String findPasswordSubmit(Model model, FindMemberInfo findMemberInfo) {
 
-        boolean result = memberService.sendResetPassword(resetPasswordDto);
+        boolean result = memberService.sendResetPassword(findMemberInfo);
         model.addAttribute("result", result);
 
         return "member/find_password_result";
@@ -86,7 +85,7 @@ public class MemberController {
     }
 
     @PostMapping("/member/reset/password")
-    public String submitResetPassword(Model model, ResetPasswordDto resetMemberDto) {
+    public String submitResetPassword(Model model, FindMemberInfo resetMemberDto) {
 
         boolean result = memberService.resetPassword(resetMemberDto);
         model.addAttribute("result", result);
@@ -101,7 +100,7 @@ public class MemberController {
     }
 
     @PostMapping("/member/find-id")
-    public String submitUserId(Model model, FindUserIdDto findUserIdDto) {
+    public String submitUserId(Model model, FindMemberInfo findUserIdDto) {
         String result = memberService.findUserId(findUserIdDto);
         model.addAttribute("result", result);
 

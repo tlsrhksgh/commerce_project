@@ -1,8 +1,7 @@
 package com.single.commerce_project.member.service;
 
-import com.single.commerce_project.member.dto.FindUserIdDto;
 import com.single.commerce_project.member.dto.MemberDto;
-import com.single.commerce_project.member.dto.ResetPasswordDto;
+import com.single.commerce_project.member.dto.FindMemberInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface MemberService extends UserDetailsService {
@@ -11,10 +10,10 @@ public interface MemberService extends UserDetailsService {
 
     boolean emailAuth(String uuid);
 
-    boolean sendResetPassword(ResetPasswordDto resetPasswordDto);
+    boolean sendResetPassword(FindMemberInfo findMemberInfo);
 
-    boolean resetPassword(ResetPasswordDto resetMemberDto);
+    boolean resetPassword(FindMemberInfo resetMemberDto);
 
-    String findUserId(FindUserIdDto findUserIdDto);
+    String findUserId(FindMemberInfo findUserIdDto);
 
 }

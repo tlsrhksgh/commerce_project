@@ -27,7 +27,6 @@ public class Member extends BaseTimeEntity{
     private String password;
     private String phone;
 
-    @DateTimeFormat(pattern = "yyyy-mm-dd'T'HH:mm:ss'")
     private LocalDateTime unRegisteredAt;
     private long amount;
     private boolean adminYn;
