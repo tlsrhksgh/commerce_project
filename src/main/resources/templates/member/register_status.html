@@ -5,10 +5,9 @@
     <title>회원 가입 상태</title>
 </head>
 <body>
-
+<header th:replace="/fragments/layout.html :: fragment-header-menu"></header>
 <div th:if="${result}">
     <h1>회원 가입 완료</h1>
-
 
     <p>이메일 본인 인증 후 회원 가입이 완료됩니다.</p>
     <p>가입시 기재해주신 메일로 발송 하였으니 확인해주시기 바랍니다.</p>
