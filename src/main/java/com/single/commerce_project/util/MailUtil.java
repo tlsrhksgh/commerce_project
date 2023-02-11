@@ -1,4 +1,4 @@
-package com.single.commerce_project.member.util;
+package com.single.commerce_project.util;
 
 import com.single.commerce_project.components.MailComponents;
 import com.single.commerce_project.member.dto.MemberDto;
