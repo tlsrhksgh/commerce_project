@@ -1,4 +1,4 @@
-package com.single.commerce_project.member.util;
+package com.single.commerce_project.util;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
